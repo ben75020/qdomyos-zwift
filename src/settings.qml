@@ -21,7 +21,7 @@ import Qt.labs.settings 1.0
             property int age: 35.0
             property real weight: 75.0
             property real ftp: 200.0
-            property bool miles_unit: false
+            property bool miles_unit: true
             property bool pause_on_start: false
             property bool bike_cadence_sensor: false
             property bool run_cadence_sensor: false

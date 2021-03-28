@@ -62,6 +62,13 @@ QCoreApplication* createApplication(int &argc, char *argv[])
     QSettings settings;
     bool nogui = false;
 
+    bool miles_unit;
+    miles_unit = settings.value("miles_unit").toBool();
+    if (miles_unit == true)
+      printf("miles_unit is true !");
+    else
+      printf("miles_unit is false !");
+
     for (int i = 1; i < argc; ++i) {
         if (!qstrcmp(argv[i], "-no-gui"))
             nogui = true;        
@@ -246,6 +253,16 @@ int main(int argc, char *argv[])
     app->setApplicationName("qDomyos-Zwift");
 
     QSettings settings;
+
+
+    bool miles_unit;
+    miles_unit = settings.value("miles_unit").toBool();
+    printf("miles_unit read is %s \n", miles_unit ? "true" : "false");
+    if (miles_unit == true)
+      printf("miles_unit is true 2!");
+    else
+      printf("miles_unit is false 2!");
+
 #if defined(Q_OS_ANDROID) || defined(Q_OS_IOS)
     bool defaultNoHeartService = !noHeartService;
 
